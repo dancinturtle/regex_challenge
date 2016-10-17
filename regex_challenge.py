@@ -13,7 +13,7 @@ def get_matching_words(regex):
         "paranoia",
         "rabble",
         "union",
-        "volleyball",
+        "volleyball"
     ]
     for word in words:
         if re.search(regex, word):
@@ -21,5 +21,5 @@ def get_matching_words(regex):
 
     return results
 
-my_expression = r"a"
+my_expression = r'(\w)\1$'
 print get_matching_words(my_expression)
