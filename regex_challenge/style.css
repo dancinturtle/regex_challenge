@@ -77,3 +77,7 @@ a:visited {
 a:hover {
   color: #E91E63;
 }
+
+.answer{
+  color: red;
+}
