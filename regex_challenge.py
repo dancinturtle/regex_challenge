@@ -21,5 +21,5 @@ def get_matching_words(regex):
 
     return results
 
-my_expression = r'(\w)\1$'
+my_expression = r'(\w)\1.*(\w)\1'
 print get_matching_words(my_expression)
