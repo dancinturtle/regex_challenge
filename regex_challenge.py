@@ -26,9 +26,11 @@ print get_matching_words(r'b.b') #one character between b's
 print get_matching_words(r'b.+b') #one character one or more times between b's
 print get_matching_words(r'b.*b') #one character 0 or more times between b's
 print get_matching_words(r'b.?b') #one character 0 or 1 times between b's
-print get_matching_words(r'a.*e.*i.*o.*u')
-print get_matching_words(r'[a.*e.*i.*o.*u]{2}$')
-print get_matching_words(r'^[regularexpression]+$')
-print get_matching_words(r'^[^regex]+$')
-print get_matching_words(r'(\w)\1.*(\w)\1')
+print get_matching_words(r'a.*e.*i.*o.*u') #catches words that has all 5 vowels in order
+print get_matching_words(r'[a.*e.*i.*o.*u]{2}$') #catches words that end in two vowels
+print get_matching_words(r'^[regularexpression]+$') #catches words with one or more letters from "regular expresion"
+print get_matching_words(r'^[^regex]+$') #catches words that do not contain any letters from "regex"
+print get_matching_words(r'(\w)\1.*(\w)\1') #catches any double characters twice ex: ll bb
+print get_matching_words(r'^.*(\w{2}).*\1$') #catches any double characters twice of the same character ex: ll ll
+
 
