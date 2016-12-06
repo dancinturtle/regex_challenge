@@ -56,28 +56,31 @@
           <li>r"^[aeiou]"</li>
           <li>r"(\w)\1"</li>
         </ol>
-        <p>Write regular expressions that will produce the following output, and use the above code to test your regex:</p>
+        <p>Write regular expressions to find words that fit the following criteria, and use the above code to test your regex:</p>
         <ol>
-          <li>['issue', 'mattress', 'obsessive']</li>
-            <span><span class="emph">Hint:</span> Matches the literal "ss"</span>
-          <li>['baby']</li>
-          <span><span class="emph">Hint:</span> "." matches any character except for the new line, so this looks for a word with a "b", any character, then another "b"</span>
-          <li>['baby', 'baseball']</li>
-          <span><span class="emph">Hint:</span> "+" is a wildcard character meaning "one or more times", so this looks for a "b", one or more characters, then another "b".  All of the wildcard characters (and the next few problems cover more) apply to the one character immediately in front of them (so then is any number of "."s, not any number of "b."s)</span>
+          <li>Contains "ss"</li>
+          <span><span class="emph">Should match:</span> ['issue', 'mattress', 'obsessive']</span>
+          <li>Contains a "b", any character, then another "b"</li>
+          <span><span class="emph">Should match:</span> ['baby']</span>
+          <li>Contains a "b", one or more characters, then another "b"</li>
+          <span><span class="emph">Should match:</span> ['baby', 'baseball']</span>
+          <li>Contains all five vowels in order, with any number of characters between them</li>
+          <span><span class="emph">Should match:</span> ['facetious']</span>
+          <li>Words ending in two vowels</li>
+          <span><span class="emph">Should match:</span> ['issue', 'paranoia']</span>
+          <li>Words that only contain the letters in "regular expressions"</li>
+          <span><span class="emph">Should match:</span> ['issue', 'paranoia', 'union']</span>
+          <li>Words that don't contain any of the letters in "regex" (try looking up the two meanings of "^" in regular expressions!)</li>
+          <span><span class="emph">Should match:</span> ['baby', 'union']</span>
+        </ol>
+        <p>Look at the output below, and try to find a regex that will match those words and only those words:</p>
+        <ol>
           <li>['baby', 'baseball', 'rabble']</li>
-          <span><span class="emph">Hint:</span> "*" is like "+", but it means "zero or more times".  This looks for a "b", any number of characters (including none), then another "b"</span>
           <li>['baby', 'rabble']</li>
-          <span><span class="emph">Hint:</span> "?" means that the preceeding character is matched 0 to 1 times, for example "."</span>
-          <li>['facetious']</li>
-          <span><span class="emph">Hint:</span> This pattern matches a word that has all five vowels in order, regardless of how many letters are or are not between them</span>
-          <li>['issue', 'paranoia']</li>
-          <span><span class="emph">Hint:</span> Curly braces mean the pattern repeats that many times, so this is words that end with two vowels</span>
-          <li>['issue', 'paranoia', 'union']</li>
-          <span><span class="emph">Hint:</span> This pattern includes both "^" and "$", so it will only match full words.  It looks for words consisting of one or more letters from "regular expression"</span>
-          <li>['baby', 'union']</li>
-          <span><span class="emph">Hint:</span> Annoyingly, "^" means two different things; inside a character class, it stands for "not", so this will match words that don't have any of the letters from "regex"</span>
-          <li>['volleyball']</li>
-          <span><span class="emph">Hint:</span> This matches any word where the double-letter appears twice</span>
+          <span><span class="emph">Hint:</span> These should remind you of questions 2 and 3 above.  What's the same?  What's different?</span>
+          <li>['facetious', 'union']</li>
+          <li>['issue', 'obsessive', 'rabble']</li>
+          <li>['mattress', 'volleyball']</li>
         </ol>
       </div>
     </div>
