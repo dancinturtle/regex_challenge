@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Regex Challenge</title>
+    <link rel="stylesheet" href="style.css" media="screen" title="no title">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <div class="logo accent">.*</div>
+        <h1>Reg<span class="accent">Ex</span> Challenge</h1>
+        <h3>pattern matching olympics</h3>
+      </div>
+      <div class="content">
+
+        <p>What would our output be for this example? Predict the following: </p>
+        <ol>
+          <li><strong>r"v"</strong></li>
+          <p>['denver', 'obsessive', 'volleyball']</p>
+          <li><strong>r"^[aeiou]"</strong></li>
+          <p>['issue', 'obsessive', 'union']</p>
+          <li>r"(\w)\1"</li>
+          <p>['baseball', 'issue', 'mattress', 'obsessive', 'rabble', 'volleyball']</p>
+        </ol>
+        <p>Write regular expressions that will produce the following output, and use the above code to test your regex:</p>
+        <ol>
+          <li>['issue', 'mattress', 'obsessive']</li>
+          <span><span class="emph">ANSWER: r"ss"</span>
+          <li>['baby']</li>
+          <span><span class="emph">Answer: r"b.b"</span>
+          <li>['baby', 'baseball']</li>
+          <span><span class="emph">Answer: r"b.+b"</span>
+          <li>['baby', 'baseball', 'rabble']</li>
+          <span><span class="emph">Answer: r"b.*b"</span>
+          <li>['baby', 'rabble']</li>
+          <span><span class="emph">Answer: r"b.?b"</span>
+          <li>['facetious']</li>
+          <span><span class="emph">Answer: r"a.*e.*i.*o.*u"</span>
+          <li>['issue', 'paranoia']</li>
+          <span><span class="emph">Answer: r"[aeiou]{2}$"</span>
+          <li>['issue', 'paranoia', 'union']</li>
+          <span><span class="emph">Answer: r"^[regular expression]+$"</span>
+          <li>['baby', 'union']</li>
+          <span><span class="emph">Answer: r"^[^regex]+$"</span>
+          <li>['volleyball']</li>
+          <span><span class="emph">Answer: r"\b\w*?(\w{2})\w*?\1\w?\b"</span>
+        </ol>
+      </div>
+    </div>
+
+
+  </body>
+</html>
