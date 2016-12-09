@@ -59,25 +59,35 @@ atom <!DOCTYPE html>
         <p>Write regular expressions that will produce the following output, and use the above code to test your regex:</p>
         <ol>
           <li>['issue', 'mattress', 'obsessive']</li>
-            <span><span class="emph">Hint:</span> Matches the literal "ss"</span>
+            <span><span class="emph">Hint:</span> Matches the literal "ss"</span><p class="answer">r"(s)\1"</p>
+
           <li>['baby']</li>
-          <span><span class="emph">Hint:</span> "." matches any character except for the new line, so this looks for a word with a "b", any character, then another "b"</span>
+          <span><span class="emph">Hint:</span> "." matches any character except for the new line, so this looks for a word with a "b", any character, then another "b"</span><p class="answer">r"b.b"</p>
+
           <li>['baby', 'baseball']</li>
-          <span><span class="emph">Hint:</span> "+" is a wildcard character meaning "one or more times", so this looks for a "b", one or more characters, then another "b".  All of the wildcard characters (and the next few problems cover more) apply to the one character immediately in front of them (so then is any number of "."s, not any number of "b."s)</span>
+          <span><span class="emph">Hint:</span> "+" is a wildcard character meaning "one or more times", so this looks for a "b", one or more characters, then another "b".  All of the wildcard characters (and the next few problems cover more) apply to the one character immediately in front of them (so then is any number of "."s, not any number of "b."s)</span><p class="answer">r"b.+b"</p>
+
           <li>['baby', 'baseball', 'rabble']</li>
-          <span><span class="emph">Hint:</span> "*" is like "+", but it means "zero or more times".  This looks for a "b", any number of characters (including none), then another "b"</span>
+          <span><span class="emph">Hint:</span> "*" is like "+", but it means "zero or more times".  This looks for a "b", any number of characters (including none), then another "b"</span><p class="answer">r"b.*b"</p>
+
           <li>['baby', 'rabble']</li>
-          <span><span class="emph">Hint:</span> "?" means that the preceeding character is matched 0 to 1 times, for example "."</span>
+          <span><span class="emph">Hint:</span> "?" means that the preceeding character is matched 0 to 1 times, for example "."</span></span><p class="answer">r"b.?b"</p>
+
           <li>['facetious']</li>
-          <span><span class="emph">Hint:</span> This pattern matches a word that has all five vowels in order, regardless of how many letters are or are not between them</span>
+          <span><span class="emph">Hint:</span> This pattern matches a word that has all five vowels in order, regardless of how many letters are or are not between them</span></span></span><p class="answer">r"a.*e.*i.*o.*u"</p>
+
           <li>['issue', 'paranoia']</li>
-          <span><span class="emph">Hint:</span> Curly braces mean the pattern repeats that many times, so this is words that end with two vowels</span>
+          <span><span class="emph">Hint:</span> Curly braces mean the pattern repeats that many times, so this is words that end with two vowels</span><p class="answer">r"[aeiou]{2}\b"</p>
+
           <li>['issue', 'paranoia', 'union']</li>
-          <span><span class="emph">Hint:</span> This pattern includes both "^" and "$", so it will only match full words.  It looks for words consisting of one or more letters from "regular expression"</span>
+          <span><span class="emph">Hint:</span> This pattern includes both "^" and "$", so it will only match full words.  It looks for words consisting of one or more letters from "regular expression"</span><p class="answer">r"(\w|^)(issue|paranoia|union)(\w|$)"</p>
+
           <li>['baby', 'union']</li>
-          <span><span class="emph">Hint:</span> Annoyingly, "^" means two different things; inside a character class, it stands for "not", so this will match words that don't have any of the letters from "regex"</span>
+          <span><span class="emph">Hint:</span> Annoyingly, "^" means two different things; inside a character class, it stands for "not", so this will match words that don't have any of the letters from "regex"</span><p class="answer">r"^[^regex]*$"</p>
+
           <li>['volleyball']</li>
-          <span><span class="emph">Hint:</span> This matches any word where the double-letter appears twice</span>
+          <span><span class="emph">Hint:</span> This matches any word where the double-letter appears twice</span><p class="answer">r"(\w)\1.*(\w)\1"</p>
+
         </ol>
       </div>
     </div>
