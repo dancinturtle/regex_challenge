@@ -59,29 +59,23 @@ atom <!DOCTYPE html>
         <p>Write regular expressions that will produce the following output, and use the above code to test your regex:</p>
         <ol>
           <li>['issue', 'mattress', 'obsessive']</li>
-            <span><span class="emph">Hint:</span> Matches the literal "ss"</span>
+            <span><span class="emph">Answer:</span> r'ss'</span>
           <li>['baby']</li>
-          <span><span class="emph">Hint:</span> "." matches any character except for the new line, so this looks for a word with a "b", any character, then another "b"</span>
+          <span><span class="emph">Answer:</span> r'b.b'</span>
           <li>['baby', 'baseball']</li>
-          <span><span class="emph">Hint:</span> "+" is a wildcard character meaning "one or more times", so this looks for a "b", one or more characters, then another "b".  All of the wildcard characters (and the next few problems cover more) apply to the one character immediately in front of them (so then is any number of "."s, not any number of "b."s)</span>
+          <span><span class="emph">Answer:</span> r'b.+b'</span>
           <li>['baby', 'baseball', 'rabble']</li>
-          <span><span class="emph">Hint:</span> "*" is like "+", but it means "zero or more times".  This looks for a "b", any number of characters (including none), then another "b"</span>
+		  <span><span class="emph">Answer:</span> r'b.*b'</span>
           <li>['baby', 'rabble']</li>
-          <span><span class="emph">Hint:</span> "?" means that the preceeding character is matched 0 to 1 times, for example "."</span>
+          <span><span class="emph">Answer:</span> r'b.?b' </span>
           <li>['facetious']</li>
-          <span><span class="emph">Hint:</span> This pattern matches a word that has all five vowels in order, regardless of how many letters are or are not between them</span>
+          <span><span class="emph">Answer:</span>r'[^eiou]+[^aiou]+[^aeou]+[^aeiu]+[^aeio]+'</span>
           <li>['issue', 'paranoia']</li>
-          <span><span class="emph">Hint:</span> Curly braces mean the pattern repeats that many times, so this is words that end with two vowels</span>
+		  <span><span class="emph">Answer:</span> r'[aeiou]{2}$'</span>
           <li>['issue', 'paranoia', 'union']</li>
-          <span><span class="emph">Hint:</span> This pattern includes both "^" and "$", so it will only match full words.  It looks for words consisting of one or more letters from "regular expression"</span>
+		  <span><span class="emph">Answer:</span> r'^[reqularexpression]{1,}$'</span>
+
           <li>['baby', 'union']</li>
-          <span><span class="emph">Hint:</span> Annoyingly, "^" means two different things; inside a character class, it stands for "not", so this will match words that don't have any of the letters from "regex"</span>
+          <span><span class="emph">Answer:</span> r'^[^regex]+$'</span>
           <li>['volleyball']</li>
-          <span><span class="emph">Hint:</span> This matches any word where the double-letter appears twice</span>
-        </ol>
-      </div>
-    </div>
-
-
-  </body>
-</html>
+		  <span><span class="emph">Answer:</span> r'([a-z])\1.*\1'</span> 
