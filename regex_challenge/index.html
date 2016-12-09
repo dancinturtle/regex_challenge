@@ -1,4 +1,6 @@
-atom <!DOCTYPE html>
+<!-- STEFANIE AND NOLAN -->
+
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -53,31 +55,45 @@ atom <!DOCTYPE html>
         <p>What would our output be for this example? Predict the following: </p>
         <ol>
           <li>r"v"</li>
+          <strong>A: This would give us any word containing the letter "v".</strong>
           <li>r"^[aeiou]"</li>
+          <strong>A: This would give us any word starting with a vowel.</strong>
           <li>r"(\w)\1"</li>
+          <strong>A: This returns words that have double letters within them.</strong>
         </ol>
         <p>Write regular expressions that will produce the following output, and use the above code to test your regex:</p>
         <ol>
           <li>['issue', 'mattress', 'obsessive']</li>
-            <span><span class="emph">Hint:</span> Matches the literal "ss"</span>
+            <span><span class="emph">Hint:</span> Matches the literal "ss"</span></br>
+            <strong>A: r"ss"</strong></br>
           <li>['baby']</li>
-          <span><span class="emph">Hint:</span> "." matches any character except for the new line, so this looks for a word with a "b", any character, then another "b"</span>
+          <span><span class="emph">Hint:</span> "." matches any character except for the new line, so this looks for a word with a "b", any character, then another "b"</span></br>
+          <strong>A: r"b.b"</strong>
+          </svg>
           <li>['baby', 'baseball']</li>
-          <span><span class="emph">Hint:</span> "+" is a wildcard character meaning "one or more times", so this looks for a "b", one or more characters, then another "b".  All of the wildcard characters (and the next few problems cover more) apply to the one character immediately in front of them (so then is any number of "."s, not any number of "b."s)</span>
+          <span><span class="emph">Hint:</span> "+" is a wildcard character meaning "one or more times", so this looks for a "b", one or more characters, then another "b".  All of the wildcard characters (and the next few problems cover more) apply to the one character immediately in front of them (so then is any number of "."s, not any number of "b."s)</span></br>
+          <strong>A: r"b.+b\w*"</strong></br>
           <li>['baby', 'baseball', 'rabble']</li>
-          <span><span class="emph">Hint:</span> "*" is like "+", but it means "zero or more times".  This looks for a "b", any number of characters (including none), then another "b"</span>
+          <span><span class="emph">Hint:</span> "*" is like "+", but it means "zero or more times".  This looks for a "b", any number of characters (including none), then another "b"</span></br>
+          <strong>A: r"b.*b\w*"</strong>
           <li>['baby', 'rabble']</li>
-          <span><span class="emph">Hint:</span> "?" means that the preceeding character is matched 0 to 1 times, for example "."</span>
+          <span><span class="emph">Hint:</span> "?" means that the preceeding character is matched 0 to 1 times, for example "."</span></br>
+          <strong>A: r"b.?b\w*"</strong>
           <li>['facetious']</li>
-          <span><span class="emph">Hint:</span> This pattern matches a word that has all five vowels in order, regardless of how many letters are or are not between them</span>
+          <span><span class="emph">Hint:</span> This pattern matches a word that has all five vowels in order, regardless of how many letters are or are not between them</span></br>
+          <strong>A: "a[^eiou]*e[^iou]*i[^ou]*o[^u]*u*"</strong>
           <li>['issue', 'paranoia']</li>
-          <span><span class="emph">Hint:</span> Curly braces mean the pattern repeats that many times, so this is words that end with two vowels</span>
+          <span><span class="emph">Hint:</span> Curly braces mean the pattern repeats that many times, so this is words that end with two vowels</span></br>
+          <strong>A: "[aeiou]{2}$"</strong>
           <li>['issue', 'paranoia', 'union']</li>
-          <span><span class="emph">Hint:</span> This pattern includes both "^" and "$", so it will only match full words.  It looks for words consisting of one or more letters from "regular expression"</span>
+          <span><span class="emph">Hint:</span> This pattern includes both "^" and "$", so it will only match full words.  It looks for words consisting of one or more letters from "regular expression"</span></br>
+          <strong>A: r"^[regularxpsion]*[regularxpsion]$"</strong>
           <li>['baby', 'union']</li>
-          <span><span class="emph">Hint:</span> Annoyingly, "^" means two different things; inside a character class, it stands for "not", so this will match words that don't have any of the letters from "regex"</span>
+          <span><span class="emph">Hint:</span> Annoyingly, "^" means two different things; inside a character class, it stands for "not", so this will match words that don't have any of the letters from "regex"</span></br>
+          <strong>A: r"^[^regex]*[^regex]$"</strong>
           <li>['volleyball']</li>
           <span><span class="emph">Hint:</span> This matches any word where the double-letter appears twice</span>
+          <strong>A: r"\w*(\w)\1\w*\1\w*"</strong>
         </ol>
       </div>
     </div>
