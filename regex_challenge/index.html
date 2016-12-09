@@ -1,4 +1,4 @@
-atom <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -51,37 +51,89 @@ atom <!DOCTYPE html>
   print get_matching_words(my_expression)
         </pre>
         <p>What would our output be for this example? Predict the following: </p>
-        <ol>
-          <li>r"v"</li>
-          <li>r"^[aeiou]"</li>
-          <li>r"(\w)\1"</li>
-        </ol>
+        <table>
+          <thead>
+            <tr>
+              <td>Regex Input</td>
+              <td>Predicted Output</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>r"v"</td>
+              <td>denver, volleyball</td>
+            </tr>
+            <tr>
+              <td>r"^[aeiou]"</td>
+              <td>baby, baseball, facetious, issue, mattress, obsessive, paranoia, rabble, union, volleyball</td>
+            </tr>
+            <tr>
+              <td>r"(\w)\1"</td>
+              <td>baseball, issue, mattress, obsessive, rabble, volleyball</td>
+            </tr>
+          </tbody>
+        </table>
         <p>Write regular expressions that will produce the following output, and use the above code to test your regex:</p>
-        <ol>
-          <li>['issue', 'mattress', 'obsessive']</li>
-            <span><span class="emph">Hint:</span> Matches the literal "ss"</span>
-          <li>['baby']</li>
-          <span><span class="emph">Hint:</span> "." matches any character except for the new line, so this looks for a word with a "b", any character, then another "b"</span>
-          <li>['baby', 'baseball']</li>
-          <span><span class="emph">Hint:</span> "+" is a wildcard character meaning "one or more times", so this looks for a "b", one or more characters, then another "b".  All of the wildcard characters (and the next few problems cover more) apply to the one character immediately in front of them (so then is any number of "."s, not any number of "b."s)</span>
-          <li>['baby', 'baseball', 'rabble']</li>
-          <span><span class="emph">Hint:</span> "*" is like "+", but it means "zero or more times".  This looks for a "b", any number of characters (including none), then another "b"</span>
-          <li>['baby', 'rabble']</li>
-          <span><span class="emph">Hint:</span> "?" means that the preceeding character is matched 0 to 1 times, for example "."</span>
-          <li>['facetious']</li>
-          <span><span class="emph">Hint:</span> This pattern matches a word that has all five vowels in order, regardless of how many letters are or are not between them</span>
-          <li>['issue', 'paranoia']</li>
-          <span><span class="emph">Hint:</span> Curly braces mean the pattern repeats that many times, so this is words that end with two vowels</span>
-          <li>['issue', 'paranoia', 'union']</li>
-          <span><span class="emph">Hint:</span> This pattern includes both "^" and "$", so it will only match full words.  It looks for words consisting of one or more letters from "regular expression"</span>
-          <li>['baby', 'union']</li>
-          <span><span class="emph">Hint:</span> Annoyingly, "^" means two different things; inside a character class, it stands for "not", so this will match words that don't have any of the letters from "regex"</span>
-          <li>['volleyball']</li>
-          <span><span class="emph">Hint:</span> This matches any word where the double-letter appears twice</span>
-        </ol>
+        <table>
+          <thead>
+            <tr>
+              <td>Desired Output</td>
+              <td>Regex to product it</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>['issue', 'mattress', 'obsessive']</td>
+              <td>r'ss'+</td>
+              <!-- <span><span class="emph">Hint:</span> Matches the literal "ss"</span> -->
+            </tr>
+            <tr>
+              <td>['baby']</td>
+              <td>r'b.b'</td>
+              <!-- <span><span class="emph">Hint:</span> "." matches any character except for the new line, so this looks for a word with a "b", any character, then another "b"</span> -->
+            </tr>
+            <tr>
+              <td>['baby', 'baseball']</td>
+              <td>r'b.+b'</td>
+              <!-- <span><span class="emph">Hint:</span> "+" is a wildcard character meaning "one or more times", so this looks for a "b", one or more characters, then another "b".  All of the wildcard characters (and the next few problems cover more) apply to the one character immediately in front of them (so then is any number of "."s, not any number of "b."s)</span> -->
+            </tr>
+            <tr>
+              <td>['baby', 'baseball', 'rabble']</td>
+              <td>r'b.*b'</td>
+              <!-- <span><span class="emph">Hint:</span> "*" is like "+", but it means "zero or more times". This looks for a "b", any number of characters (including none), then another "b"</span> -->
+            </tr>
+            <tr>
+              <td>['baby', 'rabble']</td>
+              <td>r'b.?b'</td>
+              <!-- <span><span class="emph">Hint:</span> "?" means that the preceeding character is matched 0 to 1 times, for example "."</span> -->
+            </tr>
+            <tr>
+              <td>['facetious']</td>
+              <td>r'a.*e.*i.*o.*u'</td>
+               <!-- <span><span class="emph">Hint:</span> This pattern matches a word that has all five vowels in order, regardless of how many letters are or are not between them</span> -->
+            </tr>
+            <tr>
+              <td>['issue', 'paranoia']</td>
+              <td>r'[aeiou]{2}$'</td>
+              <!-- <span><span class="emph">Hint:</span> Curly braces mean the pattern repeats that many times, so this is words that end with two vowels</span> -->
+            </tr>
+            <tr>
+              <td>['issue', 'paranoia', 'union']</td>
+              <td>r'^[regularexpression]+$'</td>
+              <!-- <span><span class="emph">Hint:</span> This pattern includes both "^" and "$", so it will only match full words. It looks for words consisting of one or more letters from "regular expression"</span> -->
+            </tr>
+            <tr>
+              <td>['baby', 'union']</td>
+              <td>r'^[^(regex)]+$'</td>
+              <!-- <span><span class="emph">Hint:</span> Annoyingly, "^" means two different things; inside a character class, it stands for "not", so this will match words that don't have any of the letters from "regex"</span> -->
+            </tr>
+            <tr>
+              <td>['volleyball']</td>
+              <td>r'(\w)\1.*\1{2}'</td>
+              <!-- <span><span class="emph">Hint:</span> This matches any word where the samedouble-letter appears twice</span> -->
+          </tbody>
+        </table>
       </div>
     </div>
-
-
   </body>
 </html>

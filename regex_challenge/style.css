@@ -77,3 +77,14 @@ a:visited {
 a:hover {
   color: #E91E63;
 }
+
+
+table, td {
+  border:1px solid #666;
+  border-collapse:collapse;
+  padding:5px;
+}
+thead {
+  font-size: 1.1em;
+  font-weight: bold;
+}

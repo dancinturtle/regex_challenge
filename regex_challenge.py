@@ -14,6 +14,7 @@ def get_matching_words(regex):
         "rabble",
         "union",
         "volleyball",
+        "volleybal"
     ]
     for word in words:
         if re.search(regex, word):
@@ -21,5 +22,5 @@ def get_matching_words(regex):
 
     return results
 
-my_expression = r"a"
+my_expression = r'(\w)\1.*\1{2}'
 print get_matching_words(my_expression)
